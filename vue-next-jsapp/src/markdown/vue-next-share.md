@@ -62,6 +62,8 @@ npm run dev
 ![Vue 选项 API: 按选项类型分组的代码](https://user-images.githubusercontent.com/499550/62783021-7ce24400-ba89-11e9-9dd3-36f4f6b1fae2.png)
 
 如果我们能够将与同一个逻辑关注点相关的代码配置在一起会更好。而这正是组合式 API 使我们能够做到的
+
+
 #### setup 选项
  vue3中我们在setup()选项中使用组合式API.
 
@@ -478,6 +480,23 @@ app.component('custom-input', {
 <custom-input v-model="searchText"></custom-input>
 ```
 
+#### Template Refs
+[template Refs](https://v3.vuejs.org/guide/composition-api-template-refs.html#template-refs)
+
+* reference:当使用组合API时，响应引用和模板引用的概念是统一的。 
+
+* 为了获得对模板内元素或组件实例的引用，我们可以像往常一样声明一个ref，并从setup()中返回它:
+
+这里，我们在渲染上下文上暴露 root，并通过ref="root"将其绑定到div上，作为div的ref。在虚拟DOM patch 算法,如果VNode ref的key和 render context 中的ref 变量完全相同,VNode的相应元素或组件实例的值将分配给那个ref。这是虚拟DOM挂载/补丁过程中执行,所以tempalte ref 只会分配值初始render()。
+
+#### template v-for
+ template v-for  和非 - v-for 节点上 key 用法已更改
+- Vue 2.x 建议在 v-if/v-else/v-else-if 的分支中使用 key
+- Vue 3.x 中仍能正常工作，但不再建议，因为没有为条件分支提供 key 时，也会自动生成唯一的 key。
+
+- 在 Vue 2.x 中 标签`<template> `不能拥有 key，在 Vue 3.x 中 key 则应该被设置在` <template> `标签上。
+
+更多详见[指南](https://v3.cn.vuejs.org/guide/migration/fragments.html)
 ## 源码分析
   
   ### 响应式数据类型

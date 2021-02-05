@@ -27,3 +27,6 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### vue-test-utils
+https://vue-test-utils.vuejs.org/v2/guide/passing-data.html#the-password-component

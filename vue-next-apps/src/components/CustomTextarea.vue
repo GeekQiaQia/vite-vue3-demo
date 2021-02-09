@@ -1,6 +1,6 @@
 <template>
   <form>
-    <v-textarea v-model="description" ref="description" />
+    <textarea v-model="description" ref="description" />
     <button @click="handleClick">Send</button>
   </form>
 </template>

@@ -34,7 +34,7 @@
     "src/**/*.vue",
     "tests/**/*.ts",
     "tests/**/*.tsx"
-  ],
+, "tests/unit/Form.spec.js"  ],
   "exclude": [
     "node_modules"
   ]

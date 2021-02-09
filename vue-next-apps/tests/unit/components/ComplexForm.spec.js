@@ -15,8 +15,8 @@ test('submits the form', async () => {
     await wrapper.find('input[type=radio][value=monthly]').setValue()
   
     await wrapper.find('form').trigger('submit.prevent')
-  
-    expect(wrapper.emitted('submit')[0][0]).toBe({
+    let result=wrapper.emitted('submit')[0][0];
+    expect(result).toEqual({
       email,
       description,
       city,

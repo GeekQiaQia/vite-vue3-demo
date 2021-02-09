@@ -22,8 +22,8 @@
 <script lang="ts">
 import {  Vue } from 'vue-class-component';
 
-export default class Nav extends Vue {
-      form: {
+export default class FormComponent extends Vue {
+      form:any={
         email: '',
         description: '',
         city: '',

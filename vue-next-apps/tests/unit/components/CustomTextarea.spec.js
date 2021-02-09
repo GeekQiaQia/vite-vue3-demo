@@ -7,7 +7,7 @@ test('emits textarea value on click', async () => {
   
     await wrapper.findComponent({ ref: 'description' }).setValue(description)
   
-    wrapper.find('.submit').trigger('click')
+    wrapper.find('button').trigger('click')
   
     expect(wrapper.emitted('submit')[0][0]).toEqual({ description })
   })
